@@ -13,6 +13,10 @@ var VueChatScroll = {
     }
 };
 
+export {
+    vChatScroll
+}
+
 export default VueChatScroll;
 
 if (typeof window !== 'undefined' && window.Vue) {

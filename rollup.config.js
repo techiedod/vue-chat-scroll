@@ -16,5 +16,6 @@ export default {
     ],
 
     format: 'umd',
-    moduleName: 'vue-chat-scroll'
+    moduleName: 'vue-chat-scroll',
+    exports: 'named'
 }

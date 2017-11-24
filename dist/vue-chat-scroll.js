@@ -1,8 +1,8 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global['vue-chat-scroll'] = factory());
-}(this, (function () { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global['vue-chat-scroll'] = global['vue-chat-scroll'] || {})));
+}(this, (function (exports) { 'use strict';
 
 /**
  * @name VueJS vChatScroll (vue-chat-scroll)
@@ -34,7 +34,8 @@ var vChatScroll = {
             scrollToBottom(el);
         }).observe(el, { childList: true, subtree: true });
     },
-    inserted: scrollToBottom
+    inserted: scrollToBottom,
+    componentUpdated: scrollToBottom
 };
 
 /**
@@ -54,6 +55,9 @@ if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(VueChatScroll);
 }
 
-return VueChatScroll;
+exports.vChatScroll = vChatScroll;
+exports['default'] = VueChatScroll;
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 })));

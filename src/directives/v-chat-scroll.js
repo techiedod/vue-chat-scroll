@@ -28,7 +28,8 @@ const vChatScroll = {
             scrollToBottom(el);
         })).observe(el, {childList: true, subtree: true});
     },
-    inserted: scrollToBottom
+    inserted: scrollToBottom,
+    componentUpdated: scrollToBottom
 };
 
 export default vChatScroll;
